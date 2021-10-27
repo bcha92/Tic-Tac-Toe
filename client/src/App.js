@@ -6,6 +6,7 @@ import GlobalStyles from "./GlobalStyles";
 const App = () => {
   return <>
     <GlobalStyles />
+    <h1>HELLO TIC TAC TOE</h1>
   </>
 }
 
