@@ -7,10 +7,11 @@ import morgan from "morgan";
 const PORT = process.env.PORT || 4000;
 const app = express(); // Express App
 app.use(cors()) // Cross-Origin Resource Sharing
+app.use(express.json()); // IMPORTANT for req.body!
 app.use(morgan("tiny")); // Logger Middleware for http request errors
 
 // Endpoints
-
+app.get("/hello", (req, res) => res.status(200).json(req.body));
 
 // Error Handling
 app.get("*", (req, res) => res.status(404).json(
