@@ -1,11 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import styled from "styled-components";
+
 // GlobalStyles CSS via styled-components
 import GlobalStyles from "./GlobalStyles";
+// Child Components
+import Home from "./Home";
 
 // Main App Component
 const App = () => {
+  const [difficulty, setDifficulty] = useState(1);
+
   return <AppWrapper>
     <GlobalStyles />
     <BrowserRouter>
@@ -14,12 +19,17 @@ const App = () => {
     </Header>
 
     <Switch>
-      <Route exact path="/">Hello</Route>
+      <Route exact path="/">
+        <Home
+          difficulty={difficulty}
+          setDifficulty={setDifficulty}
+        />
+      </Route>
       <Route path="/test">Test</Route>
     </Switch>
     </BrowserRouter>
   </AppWrapper>
-}
+};
 
 // Styled Components
 const AppWrapper = styled.div`
