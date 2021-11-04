@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-// Home Component
+// Home Page Component
 const Home = ({ difficulty, setDifficulty }) => {
     return <HomeWrapper>
         <h2>Select Difficulty and Press Start to Begin</h2>
@@ -23,7 +23,11 @@ const Home = ({ difficulty, setDifficulty }) => {
         />
 
         <Link to="/game">
-        <button>START</button>
+        <button
+            style={{background: difficulty === "1" ? "darkseagreen" :
+            difficulty === "2" ? "lemonchiffon" : "lightsalmon"
+            }}
+        >START</button>
         </Link>
     </HomeWrapper>
 };
@@ -77,17 +81,16 @@ const HomeWrapper = styled.div`
         font-size: 30px;
         border: 0;
         border-radius: 10px;
-        box-shadow: 0px 4px 0px #555;
+        box-shadow: 0 4px #555;
         transition: 200ms ease-out;
 
         &:hover {
             background: skyblue;
             transition: 100ms ease-in;
         };
-
         &:active {
             transform: translateY(3px);
-            box-shadow: 0px 1px 0px #555;
+            box-shadow: 0 1px #555;
         }
     };
 `;
