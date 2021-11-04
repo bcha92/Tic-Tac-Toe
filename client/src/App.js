@@ -9,7 +9,7 @@ import Home from "./Home";
 
 // Main App Component
 const App = () => {
-  const [difficulty, setDifficulty] = useState(1);
+  const [difficulty, setDifficulty] = useState("2");
 
   return <AppWrapper>
     <GlobalStyles />
@@ -25,7 +25,7 @@ const App = () => {
           setDifficulty={setDifficulty}
         />
       </Route>
-      <Route path="/test">Test</Route>
+      <Route path="/game">Test</Route>
     </Switch>
     </BrowserRouter>
   </AppWrapper>

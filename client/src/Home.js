@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 // Home Component
@@ -6,7 +7,6 @@ const Home = ({ difficulty, setDifficulty }) => {
     return <HomeWrapper>
         <h2>Select Difficulty and Press Start to Begin</h2>
 
-        <Difficulty>
         <label>Game Difficulty: {
             difficulty === "1" ? "Easy" : difficulty === "2" ?
             "Normal" : "Hard"
@@ -16,11 +16,15 @@ const Home = ({ difficulty, setDifficulty }) => {
             type="range"
             min="1"
             max="3"
-            defaultValue="1"
-            />
-        </Difficulty>
+            defaultValue={difficulty}
+            style={{background: difficulty === "1" ? "darkseagreen" :
+            difficulty === "2" ? "lemonchiffon" : "lightsalmon"
+            }}
+        />
 
+        <Link to="/game">
         <button>START</button>
+        </Link>
     </HomeWrapper>
 };
 
@@ -30,19 +34,12 @@ const HomeWrapper = styled.div`
     flex-flow: column wrap;
     justify-content: center;
     align-items: center;
-    h2 {text-transform: uppercase};
+    margin: 100px;
 
-    button {
-        cursor: pointer;
-        padding: 20px 30px;
-        font-weight: bold;
-        font-size: 30px;
+    h2 {
+        text-transform: uppercase;
+        margin-bottom: 50px;
     };
-`;
-
-const Difficulty = styled(HomeWrapper)`
-    margin: 50px;
-    min-width: 350px;
 
     label {
         font-weight: bold;
@@ -53,7 +50,7 @@ const Difficulty = styled(HomeWrapper)`
     input {
         -webkit-appearance: none;
         appearance: none;
-        width: 100%;
+        width: 80%;
         height: 50px;
         background: #eee;
         outline: none;
@@ -66,10 +63,32 @@ const Difficulty = styled(HomeWrapper)`
         &::-webkit-slider-thumb {
             -webkit-appearance: none;
             appearance: none;
-            width: 100px;
+            width: 60px;
             height: 50px;
-            background: yellowgreen;
+            background: skyblue;
         };
+    };
+
+    button {
+        margin-top: 50px;
+        cursor: pointer;
+        padding: 20px 30px;
+        font-weight: bold;
+        font-size: 30px;
+        border: 0;
+        border-radius: 10px;
+        box-shadow: 0px 4px 0px #555;
+        transition: 200ms ease-out;
+
+        &:hover {
+            background: skyblue;
+            transition: 100ms ease-in;
+        };
+
+        &:active {
+            transform: translateY(3px);
+            box-shadow: 0px 1px 0px #555;
+        }
     };
 `;
 
