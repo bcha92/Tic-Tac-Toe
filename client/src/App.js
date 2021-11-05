@@ -6,6 +6,7 @@ import styled from "styled-components";
 import GlobalStyles from "./GlobalStyles";
 // Child Components
 import Home from "./Home";
+import Game from "./Game";
 
 // Main App Component
 const App = () => {
@@ -25,7 +26,9 @@ const App = () => {
           setDifficulty={setDifficulty}
         />
       </Route>
-      <Route path="/game">Test</Route>
+      <Route path="/game">
+        <Game />
+      </Route>
     </Switch>
     </BrowserRouter>
   </AppWrapper>
