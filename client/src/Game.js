@@ -1,6 +1,8 @@
 import React from "react";
 import { useHistory } from "react-router";
 import styled from "styled-components";
+// Child Component
+import Box from "./Box";
 
 // Main Game Component
 const Game = () => {
