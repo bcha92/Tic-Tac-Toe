@@ -7,6 +7,11 @@ import Box from "./Box";
 // Main Game Component
 const Game = () => {
     let history = useHistory(); // Return Home
+    const TicTacToe = [
+        null, null, null,
+        null, null, null,
+        null, null, null
+    ];
 
     return <GameWrap>
         <TabWrap>{/* Left Side Tab */}
@@ -16,7 +21,11 @@ const Game = () => {
         </TabWrap>
 
         <GameWrapper>{/* Game Tab // Right Side Tab */}
-            Hello
+            {TicTacToe.map((value, index) => <Box
+                key={index}
+                value={value}
+                id={index}
+            />)}
         </GameWrapper>
     </GameWrap>
 };
@@ -52,7 +61,6 @@ const TabWrap = styled(GameWrap)`
 `;
 // Main GameWrapper
 const GameWrapper = styled(GameWrap)`
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 50px;
