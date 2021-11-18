@@ -1,13 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 // Tic Tac Toe Box
-const Box = ({ value, id }) => {
-    console.log(id, value)
-    return <BoxWrap>X</BoxWrap>
+const Box = ({ value }) => {
+    const [checked, setChecked] = useState(false);
+    console.log(value)
+    return <BoxWrap
+        disabled={checked ? true : false}
+        onClick={() => setChecked(true)}
+    >
+        X
+    </BoxWrap>
 };
 
 // Styled Component
-const BoxWrap = styled.div`display: flex;`;
+const BoxWrap = styled.button`display: flex;`;
 
 export default Box;

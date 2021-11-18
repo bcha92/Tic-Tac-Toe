@@ -24,7 +24,6 @@ const Game = () => {
             {TicTacToe.map((value, index) => <Box
                 key={index}
                 value={value}
-                id={index}
             />)}
         </GameWrapper>
     </GameWrap>
