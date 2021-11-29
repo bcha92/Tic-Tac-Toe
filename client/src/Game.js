@@ -1,12 +1,12 @@
 import React from "react";
-import { useHistory } from "react-router";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 // Child Component
 import Box from "./Box";
 
 // Main Game Component
 const Game = () => {
-    let history = useHistory(); // Return Home
+    let navigate = useNavigate(); // Return Home
     const TicTacToe = [
         null, null, null,
         null, null, null,
@@ -16,7 +16,7 @@ const Game = () => {
     return <GameWrap>
         <TabWrap>{/* Left Side Tab */}
             <button
-                onClick={() => history.push("/")}
+                onClick={() => navigate("/")}
             >HOME</button>
         </TabWrap>
 

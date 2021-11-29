@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import styled from "styled-components";
 
 // GlobalStyles CSS via styled-components
@@ -19,17 +19,13 @@ const App = () => {
       <h1>TIC TAC TOE</h1>
     </Header>
 
-    <Switch>
-      <Route exact path="/">
-        <Home
-          difficulty={difficulty}
-          setDifficulty={setDifficulty}
-        />
-      </Route>
-      <Route path="/game">
-        <Game />
-      </Route>
-    </Switch>
+    <Routes>
+      <Route path="/" element={<Home
+        difficulty={difficulty}
+        setDifficulty={setDifficulty}
+      />} />
+      <Route path="/game" element={<Game />} />
+    </Routes>
     </BrowserRouter>
   </AppWrapper>
 };
