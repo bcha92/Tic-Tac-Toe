@@ -59,11 +59,8 @@ const TabWrap = styled(GameWrap)`
     };
 `;
 // Main GameWrapper
-const GameWrapper = styled(GameWrap)`
-    justify-content: center;
-    align-items: center;
-    padding: 50px;
-    flex: 1;
+const GameWrapper = styled.div`
+    display: grid;
 `;
 
 export default Game;
