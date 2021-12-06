@@ -9,7 +9,7 @@ const Box = ({ value }) => {
         disabled={checked ? true : false}
         onClick={() => setChecked(true)}
     >
-        X
+        {value === null ? "N" : value}
     </BoxWrap>
 };
 
