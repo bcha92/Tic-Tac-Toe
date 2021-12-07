@@ -14,6 +14,13 @@ const Box = ({ value }) => {
 };
 
 // Styled Component
-const BoxWrap = styled.button`display: flex;`;
+const BoxWrap = styled.button`
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    padding: 20px;
+`;
 
 export default Box;

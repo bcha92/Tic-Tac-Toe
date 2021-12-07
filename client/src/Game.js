@@ -32,7 +32,7 @@ const Game = () => {
 // Styled Components
 const GameWrap = styled.div`
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: row nowrap;
 `;
 // Left Side Tab
 const TabWrap = styled(GameWrap)`
@@ -61,6 +61,10 @@ const TabWrap = styled(GameWrap)`
 // Main GameWrapper
 const GameWrapper = styled.div`
     display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto;
+    width: 100%;
+    margin: 5%;
 `;
 
 export default Game;
