@@ -15,12 +15,11 @@ const Box = ({ value }) => {
 
 // Styled Component
 const BoxWrap = styled.button`
-    display: flex;
-    flex: 1;
-    justify-content: center;
-    align-items: center;
-    margin: 5px;
-    padding: 20px;
+    display: block;
+    margin: 5%;
+    padding: 25%;
+    height: 10%
+    width: 10%;
 `;
 
 export default Box;
