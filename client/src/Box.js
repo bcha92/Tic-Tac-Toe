@@ -17,9 +17,9 @@ const Box = ({ value }) => {
 const BoxWrap = styled.button`
     display: block;
     margin: 5%;
-    padding: 25%;
-    height: 10%
-    width: 10%;
+    padding: 10%;
+    font-size: 500%;
+    font-weight: bold;
 `;
 
 export default Box;
